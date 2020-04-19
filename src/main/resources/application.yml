@@ -1,7 +1,7 @@
 logging:
   level:
-    root: DEBUG
-    com.scg.service: DEBUG
+    root: INFO
+    com.scg.service: TRACE
     org.springframework.web: DEBUG
     org.springframework.web.HttpLogging: DEBUG
     org.springframework.security: DEBUG
@@ -12,9 +12,5 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
-          issuer-uri: https://accounts.google.com
-          jws-algorithm: RS256
-        opaquetoken:
-          client-id: 901055275613-eammv8b2mk4bcc4rf541o9e8f675qtqa.apps.googleusercontent.com
-          client-secret: VNf2MWTUPQ2uZ8ZdUSAOXZML
+          issuer-uri: http://localhost:8090/auth/realms/spring-cloud-gateway-realm
+
