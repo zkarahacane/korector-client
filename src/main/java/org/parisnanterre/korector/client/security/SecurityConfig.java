@@ -33,9 +33,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // Validate tokens through configured OpenID Provider
         http.oauth2ResourceServer().jwt().jwtAuthenticationConverter(jwtAuthenticationConverter());
         // Require authentication for all requests
-        http.authorizeRequests().anyRequest().authenticated();
+        http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
         // Allow showing pages within a frame
-        http.headers().frameOptions().sameOrigin();
+       // http.headers().frameOptions().sameOrigin();
     }
 
     private JwtAuthenticationConverter jwtAuthenticationConverter() {
